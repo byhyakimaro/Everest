@@ -49,6 +49,12 @@ export default function Home({ repositoriesNames }: { repositoriesNames: string[
             <p>bebidas</p>
           </div>
           </a>
+          <a href="doces">
+          <div className="produto">
+            <img src="https://www.hiperdoces.com.br/fotos/1/1/Chicle%20Xcle%20Pinta%20Lingua%20Azul%20200g.png" height={240} width={'auto'}/>
+            <p>Doces</p>
+          </div>
+          </a>
         </div>
       </div>
     </Container>
