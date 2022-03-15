@@ -13,12 +13,17 @@ export default function Home({ items }:any) {
         <h1>Everest</h1>
         <input type="search" name="" id="search" />
       </header>
-      {items.map((item:any) => (
-        <div className="produto">
-          <img src={item.img}/>
-          <p>{item.name}</p>
+      <div className="geral">
+        <h1>Variedades</h1>
+        <div className="produtos">
+        {items.map((item:any) => (
+          <div className="produto">
+            <img src={item.img}/>
+            <p>{item.name}</p>
+          </div>
+        ))}
         </div>
-      ))}
+      </div>
     </Container>
   </>
   )
