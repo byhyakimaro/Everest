@@ -23,7 +23,7 @@ export const products: any = {
     "items" : [
       {
         "name": "Sundae Tradicional",
-        "img": "https://www.mrmixbrasil.com.br/arquivos-upload/categorias/sorvete-sundae-18012021170330133303.png"
+        "img": "https://www.mrmixbrasil.com.br/arquivos-upload/categorias/mega-sundae-28042021180633827167.png"
       }
     ]
   }

@@ -14,7 +14,10 @@ export default function Home({ items }:any) {
         <input type="search" name="" id="search" />
       </header>
       {items.map((item:any) => (
-        <h1>{item.name}</h1>
+        <div className="produto">
+          <img src={item.img}/>
+          <p>{item.name}</p>
+        </div>
       ))}
     </Container>
   </>
