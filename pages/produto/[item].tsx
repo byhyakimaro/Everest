@@ -3,13 +3,14 @@ import { Container } from '@styles/pages/home'
 
 import { items } from '../../modules/items'
 
-export default function Home() {
+export default function Home({ data }:any) {
 
   return(
   <>
     <Container>
       <header>
         <h1>Everest</h1>
+        <h1>{data.name}</h1>
         <input type="search" name="" id="search" />
       </header>
     </Container>
@@ -32,11 +33,11 @@ export const getStaticPaths : GetStaticPaths = async () => {
 }
 
 export const getStaticProps : GetStaticProps = async (context: any) => {
-  
-  console.log(items.find(({ code }:any) => code === context.params.item))
 
   return {
-    props: {},
+    props: {
+      data: items.find(({ code }:any) => code === parseInt(context.params.item))
+    },
     revalidate: 10
   }
 }
