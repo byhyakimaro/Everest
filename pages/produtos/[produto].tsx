@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { Container } from '@styles/pages/home'
 
@@ -12,9 +13,11 @@ export default function Home({ items }:any) {
     <Container>
       <header>
         <h1>Everest</h1>
-        <h1>{item}</h1>
         <input type="search" name="" id="search" />
       </header>
+      {items.map((item:any) => (
+        <h1>{item.name}</h1>
+      ))}
     </Container>
   </>
   )
