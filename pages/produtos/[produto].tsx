@@ -17,10 +17,12 @@ export default function Home({ items }:any) {
         <h1>Variedades</h1>
         <div className="produtos">
         {items.map((item:any) => (
-          <div className="produto">
-            <img src={item.img}/>
-            <p>{item.name}</p>
-          </div>
+          <a href={`../produto/${item.code}`}>
+            <div className="produto">
+              <img src={item.img}/>
+              <p>{item.name}</p>
+            </div>
+          </a>
         ))}
         </div>
       </div>
