@@ -5,8 +5,6 @@ import { Container } from '@styles/pages/home'
 import { products } from '../../modules/products'
 
 export default function Home({ items }:any) {
-  
-  const item = items[0].name
 
   return(
   <>
