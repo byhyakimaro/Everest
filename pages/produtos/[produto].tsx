@@ -18,6 +18,12 @@ export const getStaticPaths : GetStaticPaths = async () => {
   return {
     paths: [
       { params: { produto: 'expresso' } },
+      { params: { produto: 'sundae' } },
+      { params: { produto: 'milkshake' } },
+      { params: { produto: 'acai' } },
+      { params: { produto: 'flurry' } },
+      { params: { produto: 'bebidas' } },
+      { params: { produto: 'doces' } }
     ],
     fallback: false
   }
