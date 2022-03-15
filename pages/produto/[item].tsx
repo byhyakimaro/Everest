@@ -1,9 +1,9 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { Container } from '@styles/pages/home'
 
-import { products } from '../../modules/products'
+import { items } from '../../modules/items'
 
-export default function Home({ items }:any) {
+export default function Home() {
 
   return(
   <>
@@ -18,20 +18,22 @@ export default function Home({ items }:any) {
 }
 
 export const getStaticPaths : GetStaticPaths = async () => {
+  
+  const paths = items.map((item: any ) => {
+    return {
+      params: { item: (item.code).toString() }
+    }
+  })
+
   return {
-    paths: [],
+    paths,
     fallback: false
   }
 }
 
 export const getStaticProps : GetStaticProps = async (context: any) => {
-
-  const { items } = products[context.params.produto]
-
   return {
-    props: {
-      items
-    },
+    props: {},
     revalidate: 10
   }
 }
