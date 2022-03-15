@@ -32,6 +32,9 @@ export const getStaticPaths : GetStaticPaths = async () => {
 }
 
 export const getStaticProps : GetStaticProps = async (context: any) => {
+  
+  console.log(items.find(({ code }:any) => code === context.params.item))
+
   return {
     props: {},
     revalidate: 10
