@@ -10,9 +10,16 @@ export default function Home({ data }:any) {
     <Container>
       <header>
         <h1>Everest</h1>
-        <h1>{data.name}</h1>
-        <input type="search" name="" id="search" />
+        <div className="carrinho">
+          Finalizar Pedido
+          <input type="search" name="" id="search" />
+        </div>
       </header>
+      <div className="geral">
+        <h1>{data.name}</h1>
+        <img src={data.img}/>
+        <input type="button" value="+" />
+      </div>
     </Container>
   </>
   )
