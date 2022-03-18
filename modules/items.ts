@@ -10,5 +10,11 @@ export const items: any = [
     "name": "Cascao",
     "price": 6,
     "img": "https://www.mrmixbrasil.com.br/arquivos-upload/categorias/cascao-18012021170730707309.png"
+  },
+  { 
+    "code": 3,
+    "name": "Sundae Tradicional",
+    "price": 6,
+    "img": "https://www.mrmixbrasil.com.br/arquivos-upload/categorias/mega-sundae-28042021180633827167.png"
   }
 ]
