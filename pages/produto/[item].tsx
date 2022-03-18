@@ -11,7 +11,7 @@ export default function Home({ data }:any) {
       <header>
         <h1>Everest</h1>
         <div className="carrinho">
-          <a>Visualizar Pedido</a>
+          <a><h4>Visualizar Pedido</h4></a>
           <input type="search" name="" id="search" />
         </div>
       </header>
