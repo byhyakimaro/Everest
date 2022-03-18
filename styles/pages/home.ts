@@ -36,4 +36,20 @@ export const Container = styled.div`
    height: 250px;
    width: auto;
  }
+ .items {
+   display: flex;
+ }
+ .item img {
+   height: 400px !important;
+   width: auto;
+ }
+ .item h3, .item h4 {
+   text-align: left;
+ }
+ .discricao, .item {
+   font-size: 2rem;
+   margin: 1rem 2rem; 
+   height: auto;
+   width: 50%;
+ }
 `

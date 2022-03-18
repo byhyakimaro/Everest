@@ -11,15 +11,20 @@ export default function Home({ data }:any) {
       <header>
         <h1>Everest</h1>
         <div className="carrinho">
-          Finalizar Pedido
+          <a>Visualizar Pedido</a>
           <input type="search" name="" id="search" />
         </div>
       </header>
-      <div className="geral">
-        <h1>{data.name}</h1>
-        <img src={data.img}/>
-        <input type="button" value="adicionar ao pedido +" />
-        <h2>Preço R$ {String(data.price).includes('.') ? String(data.price).padEnd(4, '0') : String(data.price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')}</h2>
+      <div className="items">
+        <div className="item">
+          <h4>{data.name}</h4>
+          <img src={data.img}/>
+          <input type="button" value="adicionar ao pedido +" />
+          <h3>Preço R$ {String(data.price).includes('.') ? String(data.price).padEnd(4, '0') : String(data.price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')}</h3>
+        </div>
+        <div className="discricao">
+          <h3>Discrição</h3>
+        </div>
       </div>
     </Container>
   </>
