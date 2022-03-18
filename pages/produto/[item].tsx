@@ -18,7 +18,8 @@ export default function Home({ data }:any) {
       <div className="geral">
         <h1>{data.name}</h1>
         <img src={data.img}/>
-        <input type="button" value="+" />
+        <input type="button" value="adicionar ao pedido +" />
+        <h2>Preço R$ {String(data.price).includes('.') ? String(data.price).padEnd(4, '0') : String(data.price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')}</h2>
       </div>
     </Container>
   </>
