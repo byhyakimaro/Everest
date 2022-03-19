@@ -10,9 +10,13 @@ export const Container = styled.div`
     background: #9fdadf;
  }
  header #search {
-   border-radius: 4px;
-   padding:5px;
-   margin-right: 2rem;
+    border-radius: 4px;
+    padding: 5px;
+    margin-right: 10px;
+ }
+ .search {
+    display: flex;
+    margin-right: 2rem;
  }
  .geral {
    margin: 2rem;
