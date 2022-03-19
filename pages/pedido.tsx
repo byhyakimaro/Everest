@@ -7,11 +7,11 @@ export default function Home() {
     <Container>
       <div className="tabs">
         <li>
-          <input type="radio" id="tab" className="rd_tab" checked/>
+          <input type="radio" name="tabs" id="tab" className="rd_tab" checked/>
           <label htmlFor="tab" className="tab_label">Pedido: 0001</label>
         </li>
         <li>
-          <input type="radio" id="tab1" className="rd_tab"/>
+          <input type="radio" name="tabs" id="tab1" className="rd_tab"/>
           <label htmlFor="tab1" className="tab_label">Pedido: 0002</label>
         </li>
       </div>
