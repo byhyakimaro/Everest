@@ -6,10 +6,10 @@ export default function Home() {
 
   useEffect(() => {
     const tabs = document.querySelectorAll('.rd_tab')
-    const title = document.querySelector('header h4')
+    const title: any = document.querySelector('header h4')
     
     tabs.forEach((tab) => {
-        tab.addEventListener('change', function(event) {
+        tab.addEventListener('change', function(event: any) {
           title.innerHTML = `Pedido: ${event.target.id}`
           console.log(parseInt(event.target.id))
         });
