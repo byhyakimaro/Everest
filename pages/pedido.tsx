@@ -5,6 +5,16 @@ export default function Home() {
   return(
   <>
     <Container>
+      <div className="tabs">
+        <li>
+          <input type="radio" id="tab" className="rd_tab" checked/>
+          <label htmlFor="tab" className="tab_label">Pedido: 0001</label>
+        </li>
+        <li>
+          <input type="radio" id="tab1" className="rd_tab"/>
+          <label htmlFor="tab1" className="tab_label">Pedido: 0002</label>
+        </li>
+      </div>
       <header>
         <h1>Everest</h1>
         <h4>Pedido: 0001</h4>

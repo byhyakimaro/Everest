@@ -52,4 +52,29 @@ export const Container = styled.div`
    height: auto;
    width: 50%;
  }
+ .tabs {
+    background: #363b48;
+    display: flex;
+    list-style: none;
+ }
+ .tabs .rd_tab { 
+	  display:none;
+	  position: absolute;
+  }
+ .tab_label{
+    font-weight: bold;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+		display: block;
+		width: 100px;
+		padding: 15px;
+		font-size: 15px;
+		color:#fff;
+		cursor: pointer;
+		text-align: center;
+	}
+  .rd_tab:checked ~ label { 
+    background-color: #9fdadf;
+    color: black;
+  }
 `
