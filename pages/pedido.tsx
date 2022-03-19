@@ -1,18 +1,32 @@
 import { GetStaticProps } from 'next'
 import { Container } from '@styles/pages/home'
+import { useEffect } from 'react'
 
 export default function Home() {
+
+  useEffect(() => {
+    const tabs = document.querySelectorAll('.rd_tab')
+    const title = document.querySelector('header h4')
+    
+    tabs.forEach((tab) => {
+        tab.addEventListener('change', function(event) {
+          title.innerHTML = `Pedido: ${event.target.id}`
+          console.log(parseInt(event.target.id))
+        });
+    })
+  }, [])
+
   return(
   <>
     <Container>
       <div className="tabs">
         <li>
-          <input type="radio" name="tabs" id="tab" className="rd_tab" checked/>
-          <label htmlFor="tab" className="tab_label">Pedido: 0001</label>
+          <input type="radio" name="tabs" id="0001" className="rd_tab" checked/>
+          <label htmlFor="0001" className="tab_label">Pedido: 0001</label>
         </li>
         <li>
-          <input type="radio" name="tabs" id="tab1" className="rd_tab"/>
-          <label htmlFor="tab1" className="tab_label">Pedido: 0002</label>
+          <input type="radio" name="tabs" id="0002" className="rd_tab"/>
+          <label htmlFor="0002" className="tab_label">Pedido: 0002</label>
         </li>
       </div>
       <header>
