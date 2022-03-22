@@ -5,14 +5,18 @@ export function Header(props: any) {
   useEffect(() => {
     const tabs: any = document.querySelector('.tabs .list')
 
-    const add: any = document.querySelector('.add svg')
-    add.addEventListener('click', function(event: any) {
+    function createTab(id) {
       const list = document.createElement('li')
-      const number = String(tabs.childElementCount+1).padStart(4, '0')
+      const number = String(id).padStart(4, '0')
       list.innerHTML = `
-      <input type="radio" name="tabs" id="${number}" class="rd_tab">
+      <input type="radio" name="tabs" id="${number}" class="rd_tab" ${id === 1 ? 'checked' : null}>
       <label for="${number}" class="tab_label">Pedido: ${number}</label>`
       tabs.appendChild(list)
+    }
+
+    const add: any = document.querySelector('.add svg')
+    add.addEventListener('click', function(event: any) {
+      createTab(tabs.childElementCount+1)
       const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
       pedidos.push( { id: tabs.childElementCount, "items": [] } )
       localStorage.setItem('pedidos', JSON.stringify(pedidos))
@@ -23,17 +27,17 @@ export function Header(props: any) {
         localStorage.setItem('n_pedido', JSON.stringify(parseInt(event.target.id)))
       }
     })
+
+    const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
+    pedidos.forEach(({ id }:any) => {
+      createTab(id)
+    })
   }, [])
   
   return (
     <>
       <div className="tabs">
-        <div className="list">
-          <li>
-            <input type="radio" name="tabs" id="0001" className="rd_tab" checked/>
-            <label htmlFor="0001" className="tab_label">Pedido: 0001</label>
-          </li>
-        </div>
+        <div className="list"></div>
         <div className="add">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="white" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
         </div>
