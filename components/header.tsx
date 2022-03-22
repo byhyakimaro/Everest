@@ -34,10 +34,6 @@ export function Header(props: any) {
             <input type="radio" name="tabs" id="0001" className="rd_tab" checked/>
             <label htmlFor="0001" className="tab_label">Pedido: 0001</label>
           </li>
-          <li>
-            <input type="radio" name="tabs" id="0002" className="rd_tab"/>
-            <label htmlFor="0002" className="tab_label">Pedido: 0002</label>
-          </li>
         </div>
         <div className="add">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="white" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
