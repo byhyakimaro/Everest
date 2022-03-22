@@ -9,9 +9,16 @@ import { useEffect } from 'react'
 export default function Home({ data }:any) {
 
   useEffect(() => {
+    const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
+    const n_pedido: any = JSON.parse(localStorage.getItem('n_pedido'))
+    const pedido = pedidos.find(({ id }) => id === n_pedido)
+
     document.addEventListener('click', function(event: any) {
       if (event.target.type === 'button') {
-        console.log(pedidos)
+        if(pedido) {
+          pedido.items.push(data.code)
+          localStorage.setItem('pedidos', JSON.stringify(pedidos))
+        }
       }
     })
   }, [])
