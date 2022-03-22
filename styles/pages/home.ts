@@ -72,8 +72,7 @@ export const Container = styled.div`
     font-weight: bold;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-		display: block;
-		width: 100px;
+		display: flex;
 		padding: 15px;
 		font-size: 15px;
 		color:#fff;
@@ -97,5 +96,12 @@ export const Container = styled.div`
   .endItem {
     cursor: pointer;
     font-weight: bold;
+  }
+  .close {
+    margin-left: 10px;
+  }
+  .close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
   }
 `
