@@ -52,7 +52,7 @@ export function Header(props: any) {
       <header>
         <h1>Everest</h1>
         <div className="endItem">
-          <a href="markplace">Visualizar Pedido</a>
+          <a href="../markplace">Visualizar Pedido</a>
         </div>
         <div className="search">
           <input type="search" name="" id="search" />
