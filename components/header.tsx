@@ -1,7 +1,5 @@
 import { useEffect } from 'react'
 
-const pedidos: any = []
-
 export function Header(props: any) {
   
   useEffect(() => {
@@ -15,7 +13,8 @@ export function Header(props: any) {
       <input type="radio" name="tabs" id="${number}" class="rd_tab">
       <label for="${number}" class="tab_label">Pedido: ${number}</label>`
       tabs.appendChild(list)
-      pedidos.push( { id: tabs.childElementCount, "items":{} } )
+      const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
+      pedidos.push( { id: tabs.childElementCount, "items": [] } )
       localStorage.setItem('pedidos', JSON.stringify(pedidos))
     })
 

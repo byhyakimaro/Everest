@@ -2,8 +2,18 @@ import { GetStaticProps } from 'next'
 import { Container } from '@styles/pages/home'
 
 import { Header } from 'components/header'
+import { useEffect } from 'react'
 
 export default function Home() {
+
+  useEffect(() => {
+    if (!localStorage.getItem('pedidos') ) {
+      localStorage.setItem('pedidos', JSON.stringify([{ id: 1, items: [] }]))
+      localStorage.setItem('n_pedido', JSON.stringify(1))
+    }
+
+  }, [])
+
   return(
   <>
     <Container>
