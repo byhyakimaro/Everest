@@ -1,4 +1,6 @@
-import { createElement, useEffect } from 'react'
+import { useEffect } from 'react'
+
+const pedidos: any = []
 
 export function Header(props: any) {
   
@@ -13,6 +15,8 @@ export function Header(props: any) {
       <input type="radio" name="tabs" id="${number}" class="rd_tab">
       <label for="${number}" class="tab_label">Pedido: ${number}</label>`
       tabs.appendChild(list)
+      pedidos.push( { id: tabs.childElementCount, "items":{} } )
+      console.log(pedidos)
     })
 
     tabs.addEventListener('click', function(event: any) {
