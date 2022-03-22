@@ -5,7 +5,7 @@ export function Header(props: any) {
   useEffect(() => {
     const tabs: any = document.querySelector('.tabs .list')
 
-    function createTab(id, selected) {
+    function createTab(id:any, selected:any) {
       const list = document.createElement('li')
       const number = String(id).padStart(4, '0')
       list.innerHTML = `
@@ -16,9 +16,9 @@ export function Header(props: any) {
 
     const add: any = document.querySelector('.add svg')
     add.addEventListener('click', function(event: any) {
-      const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido'))
+      const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido') || '[]')
       createTab(tabs.childElementCount+1, n_pedidos)
-      const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
+      const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
       pedidos.push( { id: tabs.childElementCount, "items": [] } )
       localStorage.setItem('pedidos', JSON.stringify(pedidos))
     })
@@ -29,8 +29,8 @@ export function Header(props: any) {
       }
     })
 
-    const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
-    const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido'))
+    const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
+    const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido') || '[]')
     if (pedidos) {
       pedidos.forEach(({ id }:any) => {
         createTab(id, n_pedidos)
