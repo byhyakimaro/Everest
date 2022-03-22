@@ -4,15 +4,6 @@ export function Header(props: any) {
   
   useEffect(() => {
     const tabs: any = document.querySelector('.tabs .list')
-    const rd_tabs = document.querySelectorAll('.rd_tab')
-    const title: any = document.querySelector('header h4')
-    
-    rd_tabs.forEach((tab) => {
-        tab.addEventListener('change', function(event: any) {
-          title.innerHTML = `Pedido: ${event.target.id}`
-          console.log(parseInt(event.target.id))
-        });
-    })
 
     const add: any = document.querySelector('.add svg')
     add.addEventListener('click', function(event: any) {
