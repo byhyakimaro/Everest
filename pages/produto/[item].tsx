@@ -6,8 +6,6 @@ import { items } from '../../modules/items'
 import { Header } from 'components/header'
 import { useEffect } from 'react'
 
-import { pedidos } from 'components/header'
-
 export default function Home({ data }:any) {
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export const pedidos: any = []
+const pedidos: any = []
 
 export function Header(props: any) {
   
@@ -16,7 +16,7 @@ export function Header(props: any) {
       <label for="${number}" class="tab_label">Pedido: ${number}</label>`
       tabs.appendChild(list)
       pedidos.push( { id: tabs.childElementCount, "items":{} } )
-      console.log(pedidos)
+      localStorage.setItem('pedidos', JSON.stringify(pedidos))
     })
 
     tabs.addEventListener('click', function(event: any) {
