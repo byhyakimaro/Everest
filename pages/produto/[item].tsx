@@ -4,8 +4,19 @@ import { Container } from '@styles/pages/home'
 import { items } from '../../modules/items'
 
 import { Header } from 'components/header'
+import { useEffect } from 'react'
+
+import { pedidos } from 'components/header'
 
 export default function Home({ data }:any) {
+
+  useEffect(() => {
+    document.addEventListener('click', function(event: any) {
+      if (event.target.type === 'button') {
+        console.log(pedidos)
+      }
+    })
+  }, [])
 
   return(
   <>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const pedidos: any = []
+export const pedidos: any = []
 
 export function Header(props: any) {
   
