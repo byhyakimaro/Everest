@@ -3,18 +3,14 @@ import { Container } from '@styles/pages/home'
 
 import { items } from '../../modules/items'
 
+import { Header } from 'components/header'
+
 export default function Home({ data }:any) {
 
   return(
   <>
     <Container>
-      <header>
-        <h1>Everest</h1>
-        <div className="carrinho">
-          <a><h4>Visualizar Pedido</h4></a>
-          <input type="search" name="" id="search" />
-        </div>
-      </header>
+      <Header></Header>
       <div className="items">
         <div className="item">
           <h4>{data.name}</h4>
