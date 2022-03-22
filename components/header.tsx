@@ -14,6 +14,12 @@ export function Header(props: any) {
       <label for="${number}" class="tab_label">Pedido: ${number}</label>`
       tabs.appendChild(list)
     })
+
+    tabs.addEventListener('click', function(event: any) {
+      if (event.target.id) {
+        console.log(parseInt(event.target.id))
+      }
+    })
   }, [])
   
   return (
