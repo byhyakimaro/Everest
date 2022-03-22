@@ -2,6 +2,8 @@ import { GetStaticProps } from 'next'
 import { Container } from '@styles/pages/home'
 import { useEffect } from 'react'
 
+import { Tabs } from 'components/tabs'
+
 export default function Home() {
 
   useEffect(() => {
@@ -19,16 +21,7 @@ export default function Home() {
   return(
   <>
     <Container>
-      <div className="tabs">
-        <li>
-          <input type="radio" name="tabs" id="0001" className="rd_tab" checked/>
-          <label htmlFor="0001" className="tab_label">Pedido: 0001</label>
-        </li>
-        <li>
-          <input type="radio" name="tabs" id="0002" className="rd_tab"/>
-          <label htmlFor="0002" className="tab_label">Pedido: 0002</label>
-        </li>
-      </div>
+      <Tabs></Tabs>
       <header>
         <h1>Everest</h1>
         <h4>Pedido: 0001</h4>
