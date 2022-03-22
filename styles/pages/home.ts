@@ -94,4 +94,8 @@ export const Container = styled.div`
   .tabs li {
     display: flex;
   }
+  .endItem {
+    cursor: pointer;
+    font-weight: bold;
+  }
 `
