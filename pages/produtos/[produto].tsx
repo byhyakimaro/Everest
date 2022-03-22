@@ -3,16 +3,14 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { Container } from '@styles/pages/home'
 
 import { products } from '../../modules/products'
+import { Header } from 'components/header'
 
 export default function Home({ items }:any) {
 
   return(
   <>
     <Container>
-      <header>
-        <h1>Everest</h1>
-        <input type="search" name="" id="search" />
-      </header>
+      <Header></Header>
       <div className="geral">
         <h1>Variedades</h1>
         <div className="produtos">

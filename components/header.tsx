@@ -1,4 +1,19 @@
+import { useEffect } from 'react'
+
 export function Header(props: any) {
+  
+  useEffect(() => {
+    const tabs = document.querySelectorAll('.rd_tab')
+    const title: any = document.querySelector('header h4')
+    
+    tabs.forEach((tab) => {
+        tab.addEventListener('change', function(event: any) {
+          title.innerHTML = `Pedido: ${event.target.id}`
+          console.log(parseInt(event.target.id))
+        });
+    })
+  }, [])
+  
   return (
     <>
       <div className="tabs">

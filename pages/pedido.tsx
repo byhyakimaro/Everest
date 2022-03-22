@@ -1,23 +1,9 @@
 import { GetStaticProps } from 'next'
 import { Container } from '@styles/pages/home'
-import { useEffect } from 'react'
 
 import { Header } from 'components/header'
 
 export default function Home() {
-
-  useEffect(() => {
-    const tabs = document.querySelectorAll('.rd_tab')
-    const title: any = document.querySelector('header h4')
-    
-    tabs.forEach((tab) => {
-        tab.addEventListener('change', function(event: any) {
-          title.innerHTML = `Pedido: ${event.target.id}`
-          console.log(parseInt(event.target.id))
-        });
-    })
-  }, [])
-
   return(
   <>
     <Container>
