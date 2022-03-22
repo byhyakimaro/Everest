@@ -14,6 +14,10 @@ export function Header(props: any) {
       tabs.appendChild(list)
     }
 
+    function getUniqueListBy(arr: string[], key: any) {
+      return [...new Map(arr.map(item => [item[key], item])).values()]
+    }
+
     const add: any = document.querySelector('.add svg')
     add.addEventListener('click', function(event: any) {
       const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido') || '[]')
@@ -29,7 +33,7 @@ export function Header(props: any) {
       }
     })
 
-    const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
+    const pedidos: any = getUniqueListBy(JSON.parse(localStorage.getItem('pedidos') || '[]'), 'id')
     const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido') || '[]')
     if (pedidos) {
       pedidos.forEach(({ id }:any) => {
