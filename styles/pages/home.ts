@@ -61,6 +61,9 @@ export const Container = styled.div`
     display: flex;
     list-style: none;
  }
+ .tabs .list {
+   display: flex;
+ }
  .tabs .rd_tab { 
 	  display:none;
 	  position: absolute;
@@ -87,5 +90,8 @@ export const Container = styled.div`
   .add:hover {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
+  }
+  .tabs li {
+    display: flex;
   }
 `

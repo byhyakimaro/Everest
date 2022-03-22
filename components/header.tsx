@@ -1,35 +1,46 @@
-import { useEffect } from 'react'
+import { createElement, useEffect } from 'react'
 
 export function Header(props: any) {
   
   useEffect(() => {
-    const tabs = document.querySelectorAll('.rd_tab')
+    const tabs: any = document.querySelector('.tabs .list')
+    const rd_tabs = document.querySelectorAll('.rd_tab')
     const title: any = document.querySelector('header h4')
     
-    tabs.forEach((tab) => {
+    rd_tabs.forEach((tab) => {
         tab.addEventListener('change', function(event: any) {
           title.innerHTML = `Pedido: ${event.target.id}`
           console.log(parseInt(event.target.id))
         });
+    })
+
+    const add: any = document.querySelector('.add svg')
+    add.addEventListener('click', function(event: any) {
+      const list = document.createElement('li')
+      const number = String(tabs.childElementCount+1).padStart(4, '0')
+      list.innerHTML = `
+      <input type="radio" name="tabs" id="${number}" class="rd_tab">
+      <label for="${number}" class="tab_label">Pedido: ${number}</label>`
+      tabs.appendChild(list)
     })
   }, [])
   
   return (
     <>
       <div className="tabs">
-        <li>
-          <input type="radio" name="tabs" id="0001" className="rd_tab" checked/>
-          <label htmlFor="0001" className="tab_label">Pedido: 0001</label>
-        </li>
-        <li>
-          <input type="radio" name="tabs" id="0002" className="rd_tab"/>
-          <label htmlFor="0002" className="tab_label">Pedido: 0002</label>
-        </li>
-        <li>
-          <div className="add">
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="white" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-          </div>
-        </li>
+        <div className="list">
+          <li>
+            <input type="radio" name="tabs" id="0001" className="rd_tab" checked/>
+            <label htmlFor="0001" className="tab_label">Pedido: 0001</label>
+          </li>
+          <li>
+            <input type="radio" name="tabs" id="0002" className="rd_tab"/>
+            <label htmlFor="0002" className="tab_label">Pedido: 0002</label>
+          </li>
+        </div>
+        <div className="add">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="white" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        </div>
       </div>
       <header>
         <h1>Everest</h1>
