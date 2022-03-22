@@ -5,18 +5,19 @@ export function Header(props: any) {
   useEffect(() => {
     const tabs: any = document.querySelector('.tabs .list')
 
-    function createTab(id) {
+    function createTab(id, selected) {
       const list = document.createElement('li')
       const number = String(id).padStart(4, '0')
       list.innerHTML = `
-      <input type="radio" name="tabs" id="${number}" class="rd_tab" ${id === 1 ? 'checked' : null}>
+      <input type="radio" name="tabs" id="${number}" class="rd_tab" ${id === selected ? 'checked' : null}>
       <label for="${number}" class="tab_label">Pedido: ${number}</label>`
       tabs.appendChild(list)
     }
 
     const add: any = document.querySelector('.add svg')
     add.addEventListener('click', function(event: any) {
-      createTab(tabs.childElementCount+1)
+      const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido'))
+      createTab(tabs.childElementCount+1, n_pedidos)
       const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
       pedidos.push( { id: tabs.childElementCount, "items": [] } )
       localStorage.setItem('pedidos', JSON.stringify(pedidos))
@@ -29,9 +30,15 @@ export function Header(props: any) {
     })
 
     const pedidos: any = JSON.parse(localStorage.getItem('pedidos'))
-    pedidos.forEach(({ id }:any) => {
-      createTab(id)
-    })
+    const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido'))
+    if (pedidos) {
+      pedidos.forEach(({ id }:any) => {
+        createTab(id, n_pedidos)
+      })
+    } else {
+      createTab(1, 1)
+    }
+
   }, [])
   
   return (
