@@ -81,4 +81,11 @@ export const Container = styled.div`
     background-color: #9fdadf;
     color: black;
   }
+  .add {
+    margin: 10px;
+  }
+  .add:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+  }
 `
