@@ -58,6 +58,7 @@ export default function Home() {
             <div><strong>Código</strong></div>
             <div><strong>Nome</strong></div>
             <div><strong>Preco</strong></div>
+            <div><strong>Discrição</strong></div>
           </div>
         </div>
         <div className="total_pd"></div>

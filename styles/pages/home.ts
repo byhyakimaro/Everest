@@ -136,7 +136,7 @@ export const Container = styled.div`
     margin-left: 2rem;
   }
   .total_pd {
-    margin: 10px;
+    margin: 20px 10px;
   }
   .titles {
     display: flex;
