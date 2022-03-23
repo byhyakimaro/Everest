@@ -61,8 +61,10 @@ export default function Home() {
             <div><strong>Discrição</strong></div>
           </div>
         </div>
-        <div className="total_pd"></div>
-        <input className="endItems" type="button" value="Finalizar Pedido" />
+        <div className="totalAllot">
+          <div className="total_pd"></div>
+          <input className="endItems" type="button" value="Finalizar Pedido" />
+        </div>
       </div>
     </Container>
   </>

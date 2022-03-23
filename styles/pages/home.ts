@@ -114,7 +114,7 @@ export const Container = styled.div`
     border-radius: 4px;
     margin-left: 10rem;
   }
-  .addItem:hover {
+  .addItem:hover, .endItems:hover {
     transition: 0.1s;
     transform: scale(1.01);
   }
@@ -135,6 +135,11 @@ export const Container = styled.div`
     width: 100px;
     margin-left: 2rem;
   }
+  .totalAllot {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   .total_pd {
     margin: 20px 10px;
   }
@@ -146,5 +151,12 @@ export const Container = styled.div`
   .titles div {
     width: 100px;
     margin-left: 2rem;
+  }
+  .endItems {
+    cursor: pointer;
+    margin: 10px;
+    background: #66ff66;
+    border-radius: 4px;
+    margin-left: 10rem;
   }
 `
