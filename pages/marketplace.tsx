@@ -20,11 +20,11 @@ export default function Home() {
     }
 
     pedido.items.forEach((item: any) => {
-      const div = document.createElement('div')
       const produto = items.find(({ code }:any) => code === item)
       total_price = total_price + produto.price
-      div.innerHTML = `<strong>${produto.name}: preco R$ ${filterPrice(produto.price)}</strong>`
-      document.querySelector('.items_mk')?.appendChild(div)
+      document.querySelector('.codeItem').innerHTML = `<strong>${produto.code}</strong>`
+      document.querySelector('.nameItem').innerHTML = `<strong>${produto.name}</strong>`
+      document.querySelector('.priceItem').innerHTML = `<strong>R$ ${filterPrice(produto.price)}</strong>`
     })
 
     const div = document.createElement('h3')
@@ -37,8 +37,22 @@ export default function Home() {
     <Container>
       <Header></Header>
       <div className="marketplace">
-        <div className="items_mk"></div>
+        <div className="items_mk">
+          <div className="titles">
+            <input type="checkbox" name="" id="" />
+            <div><strong>Código</strong></div>
+            <div><strong>Nome</strong></div>
+            <div><strong>Preco</strong></div>
+          </div>
+          <div className="item_mk">
+            <input type="checkbox" name="" id="" />
+            <div className="codeItem"></div>
+            <div className="nameItem"></div>
+            <div className="priceItem"></div>
+          </div>
+        </div>
         <div className="total_pd"></div>
+        <input className="endItems" type="button" value="Finalizar Pedido" />
       </div>
     </Container>
   </>

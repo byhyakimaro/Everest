@@ -121,10 +121,28 @@ export const Container = styled.div`
   .marketplace {
     margin: 4rem;
   }
-  .items_mk div {
+  .items_mk {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .item_mk {
+    width: 100%;
+    padding: 20px 10px;
     border: 1px solid black;
+    display: flex;
+  }
+  .item_mk div {
+    margin-left: 4rem;
   }
   .total_pd {
     margin: 10px;
+  }
+  .titles {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+  }
+  .titles div {
+    margin-left: 3.8rem;
   }
 `
