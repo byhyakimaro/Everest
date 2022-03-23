@@ -12,7 +12,7 @@ export function Header(props: any) {
       <input type="radio" name="tabs" id="${number}" class="rd_tab" ${id === selected ? 'checked' : null}>
       <label for="${number}" class="tab_label">Pedido: ${number}
       <div class="close" data-close="${number}">
-        <svg xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 24 24" width="14" fill="white"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        <svg data-close="${number}" xmlns="http://www.w3.org/2000/svg" height="14" viewBox="0 0 24 24" width="14" fill="white"><path data-close="${number}" d="M0 0h24v24H0V0z" fill="none"/><path data-close="${number}" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </div>
       </label>`
       tabs.appendChild(list)
@@ -28,13 +28,20 @@ export function Header(props: any) {
       createTab(tabs.childElementCount+1, n_pedidos)
       const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
       pedidos.push( { id: tabs.childElementCount, "items": [] } )
-      localStorage.setItem('pedidos', JSON.stringify(pedidos))
+      localStorage.setItem('pedidos', JSON.stringify(getUniqueListBy(pedidos, 'id')))
     })
 
     tabs.addEventListener('click', function(event: any) {
+      if(event.target.dataset.close){
+        const tab = document.querySelector(`input[id="${event.target.dataset.close}"]`)?.parentNode
+        tab.remove()
+        const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
+        const pedido = pedidos.find(({ id }:any) => id === parseInt(event.target.dataset.close))
+        pedidos.splice(pedido, 0)
+        console.log(pedidos)
+      }
       if (event.target.id) {
         localStorage.setItem('n_pedido', JSON.stringify(parseInt(event.target.id)))
-        window.location.reload()
       }
     })
 
