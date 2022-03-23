@@ -140,7 +140,7 @@ export const Container = styled.div`
   .titles {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px 0;
+    padding: 10px;
   }
   .titles div {
     margin-left: 3.8rem;

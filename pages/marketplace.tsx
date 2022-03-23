@@ -22,9 +22,24 @@ export default function Home() {
     pedido.items.forEach((item: any) => {
       const produto = items.find(({ code }:any) => code === item)
       total_price = total_price + produto.price
-      document.querySelector('.codeItem').innerHTML = `<strong>${produto.code}</strong>`
-      document.querySelector('.nameItem').innerHTML = `<strong>${produto.name}</strong>`
-      document.querySelector('.priceItem').innerHTML = `<strong>R$ ${filterPrice(produto.price)}</strong>`
+      const item_mk = document.createElement('div')
+      item_mk.className = 'item_mk'
+      const checkBox = document.createElement('input')
+      checkBox.type = 'checkbox'
+      item_mk.appendChild(checkBox)
+      const codeItem = document.createElement('div')
+      codeItem.className = 'codeItem'
+      codeItem.innerHTML = `<strong>${produto.code}</strong>`
+      item_mk.appendChild(codeItem)
+      const nameItem = document.createElement('div')
+      nameItem.className = 'nameItem'
+      nameItem.innerHTML = `<strong>${produto.name}</strong>`
+      item_mk.appendChild(nameItem)
+      const priceItem = document.createElement('div')
+      priceItem.className = 'priceItem'
+      priceItem.innerHTML = `<strong>R$ ${filterPrice(produto.price)}</strong>`
+      item_mk.appendChild(priceItem)
+      document.querySelector('.items_mk')?.appendChild(item_mk)
     })
 
     const div = document.createElement('h3')
@@ -39,16 +54,9 @@ export default function Home() {
       <div className="marketplace">
         <div className="items_mk">
           <div className="titles">
-            <input type="checkbox" name="" id="" />
             <div><strong>Código</strong></div>
             <div><strong>Nome</strong></div>
             <div><strong>Preco</strong></div>
-          </div>
-          <div className="item_mk">
-            <input type="checkbox" name="" id="" />
-            <div className="codeItem"></div>
-            <div className="nameItem"></div>
-            <div className="priceItem"></div>
           </div>
         </div>
         <div className="total_pd"></div>
