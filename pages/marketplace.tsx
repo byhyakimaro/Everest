@@ -54,6 +54,7 @@ export default function Home() {
       <div className="marketplace">
         <div className="items_mk">
           <div className="titles">
+            <input type="checkbox" name="" id="" />
             <div><strong>Código</strong></div>
             <div><strong>Nome</strong></div>
             <div><strong>Preco</strong></div>

@@ -132,7 +132,8 @@ export const Container = styled.div`
     display: flex;
   }
   .item_mk div {
-    margin-left: 4rem;
+    width: 100px;
+    margin-left: 2rem;
   }
   .total_pd {
     margin: 10px;
@@ -143,6 +144,7 @@ export const Container = styled.div`
     padding: 10px;
   }
   .titles div {
-    margin-left: 3.8rem;
+    width: 100px;
+    margin-left: 2rem;
   }
 `
