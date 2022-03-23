@@ -14,11 +14,12 @@ export const Container = styled.div`
     padding: 5px;
     margin-right: 10px;
  }
- .search {
+ .tools {
     display: flex;
     margin-right: 2rem;
  }
- .search svg {
+ .tools svg {
+   margin: 0 10px;
    cursor: pointer;
  }
  .geral {
