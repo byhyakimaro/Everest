@@ -67,7 +67,7 @@ export function Header(props: any) {
       <header>
         <h1>Everest</h1>
         <div className="endItem">
-          <a href="../markplace">Visualizar Pedido</a>
+          <a href="../marketplace">Visualizar Pedido</a>
           <a href="../pedido">Adicionar Items</a>
         </div>
         <div className="search">

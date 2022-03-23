@@ -118,4 +118,13 @@ export const Container = styled.div`
     transition: 0.1s;
     transform: scale(1.01);
   }
+  .marketplace {
+    margin: 4rem;
+  }
+  .items_mk div {
+    border: 1px solid black;
+  }
+  .total_pd {
+    margin: 10px;
+  }
 `
