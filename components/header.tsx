@@ -67,6 +67,7 @@ export function Header(props: any) {
         <h1>Everest</h1>
         <div className="endItem">
           <a href="../markplace">Visualizar Pedido</a>
+          <a href="../pedido">Adicionar Items</a>
         </div>
         <div className="search">
           <input type="search" name="" id="search" />

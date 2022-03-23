@@ -97,6 +97,9 @@ export const Container = styled.div`
     cursor: pointer;
     font-weight: bold;
   }
+  .endItem a {
+    margin: 10px;
+  }
   .close {
     margin-left: 10px;
   }
