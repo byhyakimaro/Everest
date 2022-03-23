@@ -104,4 +104,15 @@ export const Container = styled.div`
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
   }
+  .addItem {
+    cursor: pointer;
+    padding: 10px;
+    background: #66ff66;
+    border-radius: 4px;
+    margin-left: 10rem;
+  }
+  .addItem:hover {
+    transition: 0.1s;
+    transform: scale(1.01);
+  }
 `

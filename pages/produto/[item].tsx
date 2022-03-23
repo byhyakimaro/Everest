@@ -19,6 +19,7 @@ export default function Home({ data }:any) {
         console.log(items)
         if(items) {
           items.push(data.code)
+          alert('pedido adicionado')
           localStorage.setItem('pedidos', JSON.stringify(pedidos))
         }
       }
@@ -33,7 +34,7 @@ export default function Home({ data }:any) {
         <div className="item">
           <h4>{data.name}</h4>
           <img src={data.img}/>
-          <input type="button" value="adicionar ao pedido +" />
+          <input className="addItem" type="button" value="adicionar ao pedido +" />
           <h3>Preço R$ {String(data.price).includes('.') ? String(data.price).padEnd(4, '0') : String(data.price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')}</h3>
         </div>
         <div className="discricao">
