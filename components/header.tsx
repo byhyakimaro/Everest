@@ -26,7 +26,7 @@ export function Header(props: any) {
     add.addEventListener('click', function(event: any) {
       const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido') || '[]')
       const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
-      console.log(pedidos.includes({'id':tabs.childElementCount+1}))
+      console.log(pedidos.filter(function(element:any) { return element.id === tabs.childElementCount+1 }).length > 0 )
       createTab(tabs.childElementCount+1, n_pedidos)
       pedidos.push( { id: tabs.childElementCount, "items": [] } )
       localStorage.setItem('pedidos', JSON.stringify(getUniqueListBy(pedidos, 'id')))
