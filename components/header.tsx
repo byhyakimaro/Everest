@@ -36,9 +36,8 @@ export function Header(props: any) {
         const tab = document.querySelector(`input[id="${event.target.dataset.close}"]`)?.parentNode
         tab.remove()
         const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
-        const pedido = pedidos.find(({ id }:any) => id === parseInt(event.target.dataset.close))
-        pedidos.splice(pedido, 0)
-        console.log(pedidos)
+        const filtered = pedidos.filter(function(element: any) { return element.id != parseInt(event.target.dataset.close) })
+        localStorage.setItem('pedidos', JSON.stringify(getUniqueListBy(filtered, 'id')))
       }
       if (event.target.id) {
         localStorage.setItem('n_pedido', JSON.stringify(parseInt(event.target.id)))
