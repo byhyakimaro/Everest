@@ -34,6 +34,7 @@ export function Header(props: any) {
     tabs.addEventListener('click', function(event: any) {
       if (event.target.id) {
         localStorage.setItem('n_pedido', JSON.stringify(parseInt(event.target.id)))
+        window.location.reload()
       }
     })
 
