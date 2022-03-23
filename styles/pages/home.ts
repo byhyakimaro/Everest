@@ -18,6 +18,9 @@ export const Container = styled.div`
     display: flex;
     margin-right: 2rem;
  }
+ .search svg {
+   cursor: pointer;
+ }
  .geral {
    margin: 2rem;
  }
