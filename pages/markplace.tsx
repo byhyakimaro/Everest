@@ -13,8 +13,13 @@ export default function Home() {
     const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido') || '[]')
     
     const pedido = pedidos.find(({ id }:any) => id === n_pedidos)
+    
+    pedido.items.forEach((item: any) => {
+      const div = document.createElement('div')
+      div.innerHTML = `<strong>${items.find(({ code }:any) => code === item).name}</strong>`
+      document.body.appendChild(div)
+    })
 
-    console.log(items.find(({ code }:any) => code === pedido.items[0] ))
   }, [])
 
   return(
