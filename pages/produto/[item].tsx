@@ -19,7 +19,7 @@ export default function Home({ data }:any) {
         console.log(items)
         if(items) {
           items.push(data.code)
-          alert('pedido adicionado')
+          alert('Produto adicionado')
           localStorage.setItem('pedidos', JSON.stringify(pedidos))
         }
       }
