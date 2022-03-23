@@ -25,8 +25,9 @@ export function Header(props: any) {
     const add: any = document.querySelector('.add svg')
     add.addEventListener('click', function(event: any) {
       const n_pedidos: any = JSON.parse(localStorage.getItem('n_pedido') || '[]')
-      createTab(tabs.childElementCount+1, n_pedidos)
       const pedidos: any = JSON.parse(localStorage.getItem('pedidos') || '[]')
+      console.log(pedidos.includes({'id':tabs.childElementCount+1}))
+      createTab(tabs.childElementCount+1, n_pedidos)
       pedidos.push( { id: tabs.childElementCount, "items": [] } )
       localStorage.setItem('pedidos', JSON.stringify(getUniqueListBy(pedidos, 'id')))
     })
