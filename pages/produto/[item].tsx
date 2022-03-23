@@ -26,6 +26,10 @@ export default function Home({ data }:any) {
     })
   }, [])
 
+  function filterPrice(price: any) {
+    return String(price).includes('.') ? price+String(0) : String(price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')
+  }
+
   return(
   <>
     <Container>
@@ -35,7 +39,7 @@ export default function Home({ data }:any) {
           <h4>{data.name}</h4>
           <img src={data.img}/>
           <input className="addItem" type="button" value="adicionar ao pedido +" />
-          <h3>Preço R$ {String(data.price).includes('.') ? String(data.price).padEnd(4, '0') : String(data.price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')}</h3>
+          <h3>Preço R$ {filterPrice(data.price)}</h3>
         </div>
         <div className="discricao">
           <h3>Discrição</h3>

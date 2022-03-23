@@ -16,7 +16,7 @@ export default function Home() {
     const pedido = pedidos.find(({ id }:any) => id === n_pedidos)
     
     function filterPrice(price: any) {
-      return String(price).includes('.') ? String(price).padEnd(4, '0') : String(price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')
+      return String(price).includes('.') ? price+String(0) : String(price).padEnd(2, '.').padEnd(3, '0').padEnd(4, '0')
     }
 
     pedido.items.forEach((item: any) => {
