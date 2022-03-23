@@ -7,7 +7,7 @@ export default function Home() {
     <Container>
       <header>
         <h1>Everest</h1>
-        <a href="pedido">Novo Pedido</a>
+        <a href="pedido"><strong>Novo Pedido</strong></a>
         <input type="search" name="" id="search" />
       </header>
     </Container>
