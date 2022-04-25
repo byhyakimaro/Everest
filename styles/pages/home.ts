@@ -163,4 +163,34 @@ export const Container = styled.div`
     border-radius: 4px;
     margin-left: 10rem;
   }
+  .method_payment {
+    top: 10rem;
+    border-radius: 4px;
+    left: calc(50% - 20rem);
+    background: rgba(255, 0, 0, .8);
+    position: absolute;
+    width: 35rem;
+    height: 20rem;
+  }
+  .title_method {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .title_method > strong {
+    margin-top: 4rem;
+    height: auto;
+    width: 100%;
+    text-align: center;
+  }
+  .title_method > .button {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .title_method > .button > input[type="button"] {
+    width: 100%;
+    margin-top: 10px;
+  }
 `

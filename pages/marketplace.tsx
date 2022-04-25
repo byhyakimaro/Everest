@@ -65,6 +65,16 @@ export default function Home() {
           <div className="total_pd"></div>
           <input className="endItems" type="button" value="Finalizar Pedido" />
         </div>
+        <div className="method_payment">
+          <div className="title_method">
+            <strong>Forma de Pagamento</strong>
+            <div className="button">
+              <input type="button" value="Maquininha" />
+              <input type="button" value="Dinheiro" />
+              <input type="button" value="Maquininha/Dinheiro" />
+            </div>
+          </div>
+        </div>
       </div>
     </Container>
   </>
